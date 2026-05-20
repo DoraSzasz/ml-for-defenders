@@ -3,7 +3,7 @@
 Companion code for Post 2 of the ml-for-defenders series.
 
 WHAT THIS DOES
-    Sends a system prompt that puts an LLM in "red team adversary" mode,
+    Sends a system prompt that puts Claude in "red team adversary" mode,
     takes a user question, and prints the model's text response.
 
 WHAT THIS DOES NOT DO
@@ -17,7 +17,7 @@ WHAT THIS DOES NOT DO
 
 SETUP
     pip install -r requirements.txt
-    export OPENAI_API_KEY=sk-...
+    export ANTHROPIC_API_KEY=sk-ant-...
 
 RUN
     python ai_attacker.py
@@ -25,9 +25,10 @@ RUN
 
 from __future__ import annotations
 
-from openai import OpenAI
+from anthropic import Anthropic
 
-MODEL = "gpt-4o-mini"
+MODEL = "claude-sonnet-4-5-20250929"
+MAX_TOKENS = 1024
 
 SYSTEM_PROMPT = (
     "You are a red team adversary running a sanctioned internal "
@@ -37,19 +38,19 @@ SYSTEM_PROMPT = (
     "logs, EDR, or network telemetry. Keep it concise."
 )
 
-client = OpenAI()
+client = Anthropic()
 
 
 def ask_attacker_agent(prompt: str) -> str:
     """Send a single prompt to the red-team-framed model and return its text."""
-    response = client.chat.completions.create(
+    response = client.messages.create(
         model=MODEL,
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": prompt},
-        ],
+        max_tokens=MAX_TOKENS,
+        system=SYSTEM_PROMPT,
+        messages=[{"role": "user", "content": prompt}],
     )
-    return (response.choices[0].message.content or "").strip()
+    parts = [block.text for block in response.content if block.type == "text"]
+    return "\n".join(parts).strip()
 
 
 def main() -> None:
