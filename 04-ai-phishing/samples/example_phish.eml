@@ -1,0 +1,22 @@
+From: "IT Help Desk" <mark.chen@imaging-it-oncall.support>
+Reply-To: it-support-reset@mailbox-secure.co
+To: you@hospital.org
+Subject: Urgent - MRI workstation locked out
+Authentication-Results: mx.hospital.org; spf=fail smtp.mailfrom=imaging-it-oncall.support; dkim=fail; dmarc=fail
+Content-Type: text/plain; charset=utf-8
+
+Hi,
+
+Sorry to bother you after hours - I'm the on-call contractor covering for imaging IT this week. We've got an MRI workstation (station 3, bay A) that's locked out and there's a patient scan queued for first thing tomorrow morning that needs the priors loaded tonight for the radiologist.
+
+The account got locked after someone fat-fingered the password a few times during the shift changeover. I've tried the standard unlock procedure but it's asking for departmental admin verification before it'll let me reset.
+
+Can you click through this reset link and confirm the temporary credential? Should only take a minute:
+
+[https://imaging-it.hospital.org/reset](https://example-training.invalid/reset-mri-ws3-urgent)
+
+Just hit the confirm button and reply back to this email with "approved" so I've got it documented. I need to get this sorted in the next hour or the morning case is going to be delayed. Please don't loop in the helpdesk ticket queue yet, I'll file it once we have the workstation back up.
+
+Cheers and thanks for the quick turnaround,
+Mark Chen
+Imaging IT On-Call (ext. 4782)

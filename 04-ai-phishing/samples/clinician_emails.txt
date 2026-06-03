@@ -1,0 +1,31 @@
+Subject: Quick favour - Tuesday roster
+
+Hi all,
+
+Quick one - can someone cover the 2pm reading slot on Tuesday? I've got the
+audit walk-through running long and I won't make it back to the workstation
+in time. Happy to swap for any of your Friday slots next week.
+
+Thanks,
+A.
+
+---
+
+Subject: PACS slowness this morning
+
+Team - PACS has been crawling since about 7:40 this morning, anyone else
+seeing it? I've raised a ticket with IT but if you're scheduled for chest
+priors before lunch you might want to pull them down early.
+
+Cheers,
+A.
+
+---
+
+Subject: Re: contractor access
+
+Hi - yes, fine to give the contractor read-only on the test environment for
+this week, but please don't put them on the production segment without
+running it past me first. I'll be on email in between cases.
+
+A.
